@@ -10,12 +10,19 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.tracing.EventAttributeValue;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.time.Duration;
+import java.util.HashMap;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -30,6 +37,8 @@ public class  RegistrationFormWithPageObjects {
     Diagnoses diagnoses = new Diagnoses();
     Vrt vrt = new Vrt();
     WebSteps steps = new WebSteps();
+
+
 
     @BeforeAll
     static void setUp() {
